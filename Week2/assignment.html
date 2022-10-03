@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+           
+            function calculate(min, max, step){
+                let sum = 0;
+                while(min <= max){
+                    sum += min;
+                    min += step;
+                }
+                console.log(sum);
+            }
+
+            calculate(1,3,1);
+            calculate(4,8,2);
+            calculate(-1,2,2);
+
+
+        
+
+            function avg(data){
+                let times = 0;
+                let sum = 0;
+                let result = 0;
+                
+
+                for( let i = 0; i < data.employees.length; i++){
+                    if (data.employees[i].manager == false){
+                        sum += data.employees[i].salary;
+                        times++;
+                        result = sum / times
+                    }
+                }
+                console.log(result);
+                return result; 
+
+            }
+            
+        
+        
+        
+                avg({
+                    "employees":[
+                    {
+                    "name":"John",
+                    "salary":30000,
+                    "manager":false
+                    },
+                    {
+                    "name":"Bob",
+                    "salary":60000,
+                    "manager":true
+                    },
+                    {
+                    "name":"Jenny",
+                    "salary":50000,
+                    "manager":false
+                    },
+                    {
+                    "name":"Tony",
+                    "salary":40000,
+                    "manager":false
+                    }
+                    ]
+                    });
+
+
+
+            function func(a){
+                function func_b(b,c){
+                    let avg_result = a + b * c;
+                    console.log(avg_result);
+                    return avg_result;
+
+                };
+                return func_b;
+                
+            };
+              
+
+            func(2)(3, 4);
+            func(5)(1, -5); 
+            func(-3)(2, 9);
+
+ 
+            const maxProduct = (nums) => {
+                if (nums.length === 2) return console.log(nums[0] * nums[1]);
+                     let max = 0;
+                    for (let i = 0; i < nums.length - 1; i++) {
+                        for (let j = i + 1; j < nums.length; j++) {
+                            const product = nums[i] * nums[j];
+                            if (product > max) max = product;
+                    }
+                }
+                    return console.log(max);
+            }   
+                
+                
+            
+            
+            maxProduct([5, 20, 2, 6]) 
+            maxProduct([10, -20, 0, 3]) 
+            maxProduct([10, -20, 0, -3]) 
+            maxProduct([-1, 2]) 
+            maxProduct([-1, 0, 2]) 
+            maxProduct([5,-1, -2, 0]) 
+            maxProduct([-5, -2]) 
+
+
+
+        const twoSum = (nums, target) => {
+            let result =[];
+                
+            for (let i = 0; i < nums.length - 1; i++){
+                for(let j = i + 1; j < nums.length; j++){
+                    const product = nums[i] +nums [j];
+                    if(product === target) result.push(i,j);
+                }
+            }    
+            return result;
+                        
+        }
+        let result = twoSum([2, 11, 7, 15,], 9);
+        console.log(result);
+
+
+
+
+
+
+               
+        </script>
+    </body>
+</html>
