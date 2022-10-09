@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>HTML DOM</title>
+    <link href='./stylesheet.css' rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner_desktop">
+        <span class="left_icon">My Website</span>
+        <span>
+            <span class="right_icon">Item 4</span>
+            <span class="right_icon">Item 3</span>
+            <span class="right_icon">Item 2</span>
+            <span class="right_icon">Item 1</span>
+        </span>
+    </div>
+
+    <div class="banner_mobile">
+        <span class="left_icon">My Website</span>
+        <img class="menu_burger" src="./4473024_android menu_burger menu_humberger menu_menu_menu icon_icon.png" />
+    </div>
+
+
+    <div class="welcome_section">
+        Welcome to My Home
+    </div>
+
+
+    <div class="main_content">
+        <div id ="upper_left" class="upper_two"></div>
+        <div id ="upper_right" class="upper_two"></div>
+    </div>
+    <div class="bottom_part_1">
+        <div id ="c1-1" class="content_box"> </div>
+        <div id ="c1-2" class="content_box"> </div>
+        <div id ="c1-3" class="content_box"> </div>
+        <div id ="c1-4" class="content_box"> </div>
+    </div>
+    <div class="bottom_part_2">
+        <div id ="c2-1" class="content_box"> </div>
+        <div id ="c2-2" class="content_box"> </div>
+        <div id ="c2-3" class="content_box"> </div>
+        <div id ="c2-4" class="content_box"> </div>
+    </div>
+
+    <script>
+
+        fetch("https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json").then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            var final_array = [];
+            var final_stitle_array = [];
+            for (let i = 0; i < data.result.results.length; i++) {
+                var product = data.result.results[i];
+                // 整理完json 資料
+
+                var pic = product.file.split('https');
+                var final = "http" + pic[1];
+                final_array.push(final);
+                final_stitle_array.push(product.stitle);
+              
+                // console.log(final_array);
+                // console.log(final_stitle_array);
+
+
+
+            };
+
+
+            let elem_pic_0 = document.createElement('img');
+            elem_pic_0.setAttribute("src", final_array[0])
+            document.querySelector("#upper_left").appendChild(elem_pic_0);
+
+            let elem_text_0 = document.createElement('span');
+            elem_text_0.textContent = final_stitle_array[0];
+            elem_text_0.setAttribute("id","inline-used")
+            document.querySelector("#upper_left").appendChild(elem_text_0);
+            document.getElementById('inline-used').style.fontSize = "20px";
+            document.getElementById('inline-used').style.lineHeight = "50px";
+
+            let elem_pic_1 = document.createElement('img');
+            elem_pic_1.setAttribute("src", final_array[1])
+            document.querySelector("#upper_right").appendChild(elem_pic_1);
+
+            let elem_text_1 = document.createElement('span');
+            elem_text_1.textContent = final_stitle_array[1];
+            elem_text_1.setAttribute("id","inline-used_right")
+            document.querySelector("#upper_right").appendChild(elem_text_1);
+            document.getElementById('inline-used_right').style.lineHeight = "50px";
+            document.getElementById('inline-used_right').style.fontSize = "20px";
+            
+
+
+            let elem_pic_2 = document.createElement('img');
+            elem_pic_2.setAttribute("src", final_array[2])
+            document.querySelector("#c1-1").appendChild(elem_pic_2);
+
+            let elem_text_2 = document.createElement('div');
+            elem_text_2.textContent = final_stitle_array[2];
+            document.querySelector("#c1-1").appendChild(elem_text_2);
+
+            let elem_pic_3 = document.createElement('img');
+            elem_pic_3.setAttribute("src", final_array[3])
+            document.querySelector("#c1-2").appendChild(elem_pic_3);
+            
+
+            let elem_text_3 = document.createElement('div');
+            elem_text_3.textContent = final_stitle_array[3];
+            document.querySelector("#c1-2").appendChild(elem_text_3);
+
+            let elem_pic_4 = document.createElement('img');
+            elem_pic_4.setAttribute("src", final_array[4])
+            document.querySelector("#c1-3").appendChild(elem_pic_4);
+
+            let elem_text_4 = document.createElement('div');
+            elem_text_4.textContent = final_stitle_array[4];
+            document.querySelector("#c1-3").appendChild(elem_text_4);
+
+            let elem_pic_5 = document.createElement('img');
+            elem_pic_5.setAttribute("src", final_array[5])
+            document.querySelector("#c1-4").appendChild(elem_pic_5);
+
+            let elem_text_5 = document.createElement('div');
+            elem_text_5.textContent = final_stitle_array[5];
+            document.querySelector("#c1-4").appendChild(elem_text_5);
+
+            let elem_pic_6 = document.createElement('img');
+            elem_pic_6.setAttribute("src", final_array[6])
+            document.querySelector("#c2-1").appendChild(elem_pic_6);
+
+            let elem_text_6 = document.createElement('div');
+            elem_text_6.textContent = final_stitle_array[6];
+            document.querySelector("#c2-1").appendChild(elem_text_6);
+            
+            let elem_pic_7 = document.createElement('img');
+            elem_pic_7.setAttribute("src", final_array[7])
+            document.querySelector("#c2-2").appendChild(elem_pic_7);
+
+            let elem_text_7 = document.createElement('div');
+            elem_text_7.textContent = final_stitle_array[7];
+            document.querySelector("#c2-2").appendChild(elem_text_7);
+            
+            let elem_pic_8 = document.createElement('img');
+            elem_pic_8.setAttribute("src", final_array[8])
+            document.querySelector("#c2-3").appendChild(elem_pic_8);
+
+            let elem_text_8 = document.createElement('div');
+            elem_text_8.textContent = final_stitle_array[8];
+            document.querySelector("#c2-3").appendChild(elem_text_8);
+            
+            let elem_pic_9 = document.createElement('img');
+            elem_pic_9.setAttribute("src", final_array[9])
+            document.querySelector("#c2-4").appendChild(elem_pic_9);
+
+            let elem_text_9 = document.createElement('div');
+            elem_text_9.textContent = final_stitle_array[9];
+            document.querySelector("#c2-4").appendChild(elem_text_9);
+   
+            
+            
+          
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
