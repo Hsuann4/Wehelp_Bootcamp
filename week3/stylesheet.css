@@ -1,3 +1,6 @@
+#inlined_used{
+line-height: 50px;
+}
 
 img{
     width: 80px;
@@ -6,7 +9,7 @@ img{
 
 .content_box img {
 
-    height: 75%;
+    height: 80%;
 
 
 }
