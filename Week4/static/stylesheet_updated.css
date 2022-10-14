@@ -1,0 +1,48 @@
+
+
+.banner{
+    padding:5px;
+    height: 80px;
+    background-color: #233345;
+    text-align: center;
+    font-size: 40px;
+    color:white;
+    font-family: 'Noto Sans TC', sans-serif;
+    
+    
+    
+
+}
+
+
+p{
+    text-align: center;
+    margin: 10px;
+    font-family: 'Noto Sans TC', sans-serif;
+
+
+
+}
+
+.button{
+    text-align: center;
+}
+
+
+.error_msg{
+    color:black;
+    margin-top: 20px;
+    padding: 60px;
+    font-size: 30px;
+    font-family: 'Noto Sans TC', sans-serif;
+
+}
+.welcome_msg{
+    color:black;
+    margin-top: 20px;
+    padding: 60px;
+    font-size: 30px;
+    font-family: 'Noto Sans TC', sans-serif;
+
+
+}
