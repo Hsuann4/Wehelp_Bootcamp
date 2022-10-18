@@ -27,7 +27,8 @@ SELECT * FROM member
 ORDER BY time DESC;
 ~~~
 
-![Screenshot 2022-10-17 at 18 39 20](https://user-images.githubusercontent.com/108836777/196542396-f490edbb-7e59-491e-91c1-d17fc8a00122.png)
+![Screenshot 2022-10-17 at 18 30 53](https://user-images.githubusercontent.com/108836777/196545811-c397b3c3-c90f-4afe-9170-b20838beacd4.png)
+
 
 
 #### 3-4
@@ -75,6 +76,72 @@ WHERE username = 'test';
 
 ### Requirement 4
 
+#### 4-1
+~~~sql
+SELECT COUNT(id)
+FROM member;
+~~~
+<img width="244" alt="Screenshot 2022-10-18 at 10 54 50" src="https://user-images.githubusercontent.com/108836777/196545991-18d5662b-cd17-4f3e-ab51-79cefae49406.png">
+
+
+#### 4-2
+~~~sql
+ELECT SUM(follower_count)
+FROM member;
+~~~
+<img width="350" alt="Screenshot 2022-10-18 at 10 57 20" src="https://user-images.githubusercontent.com/108836777/196546214-8d0b34fe-c225-40c8-a6e7-6116f2b95130.png">
+
+
+
+#### 4-3
+~~~sql
+SELECT AVG(follower_count)
+FROM member;
+~~~
+
+<img width="281" alt="Screenshot 2022-10-18 at 10 58 01" src="https://user-images.githubusercontent.com/108836777/196546269-9671aa1a-ad28-43c3-8912-73908efedefb.png">
+
+
+
 
 
 ### Requirement 5 (Optional)
+
+
+#### 5-1
+~~~sql
+SELECT member.id, member.name, message.content
+FROM member
+INNER JOIN message
+ON member.id = message.member_id;
+~~~
+
+
+<img width="352" alt="Screenshot 2022-10-18 at 19 50 24" src="https://user-images.githubusercontent.com/108836777/196546813-ed74db00-cac8-4fec-b7c3-067d5a70f51f.png">
+
+
+#### 5-2
+~~~sql
+SELECT member.id, member.name, member.username, message.content
+FROM member
+INNER JOIN message
+ON member.id = message.member_id
+WHERE member.username = 'test';
+~~~
+
+<img width="511" alt="Screenshot 2022-10-18 at 19 55 29" src="https://user-images.githubusercontent.com/108836777/196546925-5ce73cd8-3f47-45f9-85db-60605730dc35.png">
+
+
+
+#### 5-3
+~~~sql
+SELECT member.username, sum(message.like_count)
+FROM member
+INNER JOIN message
+ON member.id = message.member_id
+WHERE member.username = 'test'
+GROUP BY username;
+~~~
+
+<img width="483" alt="Screenshot 2022-10-18 at 20 10 10" src="https://user-images.githubusercontent.com/108836777/196546993-34521a21-4600-4864-8ef6-d6899cf0ff49.png">
+
