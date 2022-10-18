@@ -3,7 +3,9 @@
 ### Requiremnet 3
 
 ##### 3-1
-'''sql INSERT INTO member(id, name, username, password, follower_count,time)' VALUES (1, 'Seda', 'test', 'test', 10, DEFAULT);
+''' sql 
+
+INSERT INTO member(id, name, username, password, follower_count,time)' VALUES (1, 'Seda', 'test', 'test', 10, DEFAULT);
 '''
 
 ![Screenshot 2022-10-17 at 18 28 29](https://user-images.githubusercontent.com/108836777/196542144-08287875-b9df-49ca-a88d-2a0da07124e5.png)
