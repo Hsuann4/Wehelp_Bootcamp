@@ -4,7 +4,7 @@
 
 #### 3-1
 ~~~sql 
-INSERT INTO member(id, name, username, password, follower_count,time)' VALUES (1, 'Seda', 'test', 'test', 10, DEFAULT);
+INSERT INTO member(id, name, username, password, follower_count,time) VALUES (1, 'Seda', 'test', 'test', 10, DEFAULT);
 ~~~~
 
 ![Screenshot 2022-10-17 at 18 28 29](https://user-images.githubusercontent.com/108836777/196542144-08287875-b9df-49ca-a88d-2a0da07124e5.png)
@@ -63,7 +63,7 @@ WHERE username = 'test' AND name = 'test';
 #### 3-7
 
 ~~~sql
-UPDATED member
+UPDATE member
 SET name = 'test2'
 WHERE username = 'test';
 ~~~
@@ -86,7 +86,7 @@ FROM member;
 
 #### 4-2
 ~~~sql
-ELECT SUM(follower_count)
+SELECT SUM(follower_count)
 FROM member;
 ~~~
 <img width="350" alt="Screenshot 2022-10-18 at 10 57 20" src="https://user-images.githubusercontent.com/108836777/196546214-8d0b34fe-c225-40c8-a6e7-6116f2b95130.png">
