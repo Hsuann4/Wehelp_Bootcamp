@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>HTML DOM</title>
+    <link href='./stylesheet.css' rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="banner_desktop">
+        <span class="left_icon">My Website</span>
+        <span>
+            <span class="right_icon">Item 4</span>
+            <span class="right_icon">Item 3</span>
+            <span class="right_icon">Item 2</span>
+            <span class="right_icon">Item 1</span>
+        </span>
+    </div>
+
+    <div class="banner_mobile">
+        <span class="left_icon">My Website</span>
+        <img class="menu_burger" src="./4473024_android menu_burger menu_humberger menu_menu_menu icon_icon.png" />
+    </div>
+
+
+    <div class="welcome_section">
+        Welcome to My Home
+    </div>
+
+
+    <div class="main_content">
+        <div id="content_box0" class="upper_two"></div>
+        <div id="content_box1" class="upper_two"></div>
+    </div>
+    <div class="bottom_part_2">
+        <div id="content_box2" class="content_box"> </div>
+        <div id="content_box3" class="content_box"> </div>
+        <div id="content_box4" class="content_box"> </div>
+        <div id="content_box5" class="content_box"> </div>
+    </div>
+    <div class="bottom_part_2">
+        <div id="content_box6" class="content_box"> </div>
+        <div id="content_box7" class="content_box"> </div>
+        <div id="content_box8" class="content_box"> </div>
+        <div id="content_box9" class="content_box"> </div>
+    </div>
+
+    <script>
+
+        fetch("https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json").then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            let final_array = [];
+            let final_stitle_array = [];
+            for (let i = 0; i < data.result.results.length; i++) {
+                let product = data.result.results[i];
+                // 整理完json 資料
+
+                pic = product.file.split('https');
+                final = "http" + pic[1];
+                final_array.push(final);
+                final_stitle_array.push(product.stitle);
+
+            };//資料整理完
+
+
+            for (i = 0; i < final_stitle_array.length; i++) {
+                // let j = i + 1;
+
+                let insert_pic = document.createElement('img');
+                insert_pic.classList.add('insert_pic');
+                insert_pic.setAttribute('src', final_array[i])
+                document.getElementById('content_box' + [i]).appendChild(insert_pic);
+
+                let insert_title = document.createElement('span');
+                insert_title.textContent = final_stitle_array[i];
+                document.getElementById('content_box' + [i]).appendChild(insert_title);
+
+            };
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
