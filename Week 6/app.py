@@ -15,7 +15,7 @@ import datetime
 import mysql.connector
 
 conn = mysql.connector.connect(
-    user='root', password='Dennis860404_', database='website'
+    user='root', password='', database='website'
 )
 
 
