@@ -7,9 +7,11 @@ img{
 .content_box img {
 
     height: 80%;
+    width: 100%;
 
 
 }
+
 body{
     margin: 0px;
     
@@ -47,27 +49,54 @@ body{
      
 }
 
-
-.upper_two{
-    
+#content_box0 {
     width:580px;
-    height:50px;
-    margin: 10px;
+    margin:10px;
+    justify-content: center;
+    text-align: center;
     background-color: #DCECF2;
+<<<<<<< HEAD
     vertical-align: middle;  
     
+=======
+>>>>>>> 04d00fffda9dfe038fdb595bf12590bef5cc3dc6
 }
-.upper_two_text{
-    margin:0%;
+
+#content_box0 span {
+    line-height: 50px;
     font-size:20px;
+<<<<<<< HEAD
     line-height: 50px; 
     
+=======
+    text-align: left;
+    float:left;
+    padding-left: 10px;;
 }
+
+#content_box1{
+    width:580px;
+    margin:10px;
+    justify-content: center;
+    text-align: center;
+    background-color: #DCECF2;
+}
+
+#content_box1 span{
+    line-height: 50px;
+    font-size:20px;
+    float:left;
+    padding-left: 10px;
+>>>>>>> 04d00fffda9dfe038fdb595bf12590bef5cc3dc6
+}
+
 .upper_two img{
     float:left;
     vertical-align: middle;
 
 } 
+
+
 
 .bottom_part_1{
     display:flex;
@@ -82,6 +111,7 @@ body{
     
 }
 
+
 .content_box{
     width:280px;
     margin:10px;
@@ -89,10 +119,9 @@ body{
     text-align: center;
     background-color: #DCECF2;
 }
-.content_box img{
-    width: 100%;
-    font-size: 20px;
-}
+
+
+
 
 
 
@@ -102,7 +131,11 @@ body{
     .main_content{
         display:flex;
     }
-    .upper_two{
+    #content_box0{
+        flex:none;
+        width: 45%;
+    }
+    #content_box1{
         flex:none;
         width: 45%;
     }
@@ -121,7 +154,6 @@ body{
         width: 100%;
     }
 }
-
 
 
 /*要求三*/
@@ -147,12 +179,21 @@ body{
 
     }
     .welcome_section{
-        font-size: 30px;;
+        font-size: 25px;;
     }
     .main_content{
         flex-wrap:wrap;
     }
-    .upper_two{
+    /* .upper_two{
+        flex-wrap:wrap;
+        width: 90%;
+    } */
+
+    #content_box0{
+        flex-wrap:wrap;
+        width: 90%;
+    }
+    #content_box1{
         flex-wrap:wrap;
         width: 90%;
     }
