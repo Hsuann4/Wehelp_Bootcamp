@@ -44,53 +44,53 @@
     <script>
         //先建立通訊
 
-function senddata(url, method, body){
-    if (method === 'GET'){
-        return fetch(url).then(response => response.json())
-    } else {
-        return fetch(url, {
-            method: method,
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(body)
-        }).then(response => response.json())
-    }
-};
-
-
-
-
-function submitsearch(){
-
-   const username =  document.getElementById("username").value;
-
-   //寄出Json 到後端
-
-    senddata(`http://127.0.0.1:3000/api/member?username=${username}`).then(response => {
-        var name = document.getElementById("searchNameDisplay");
-        name.innerHTML = response.data.name;
-
-    });
-
-};
-
-
-
-
-function submitchange(){
-
-    const name =  document.getElementById("usernamechange").value;
-    const payload = {'name': name};
-    senddata('http://127.0.0.1:3000/api/member', 'PATCH', payload).then(response => {
-        var name = document.getElementById("updateNameDisplay");
-        if (response.ok) {
-            name.innerHTML = '更新成功';
+    function senddata(url, method, body){
+        if (method === 'GET'){
+            return fetch(url).then(response => response.json())
         } else {
-            name.innerHTML = '更新失敗';
+            return fetch(url, {
+                method: method,
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(body)
+            }).then(response => response.json())
         }
+    };
 
-    });
+
+
+
+    function submitsearch(){
+
+       const username =  document.getElementById("username").value;
+
+       //寄出Json 到後端
+
+        senddata(`http://127.0.0.1:3000/api/member?username=${username}`).then(response => {
+            var name = document.getElementById("searchNameDisplay");
+            name.innerHTML = response.data.name;
+
+        });
+
+    };
+
+
+
+
+    function submitchange(){
+
+        const name =  document.getElementById("usernamechange").value;
+        const payload = {'name': name};
+        senddata('http://127.0.0.1:3000/api/member', 'PATCH', payload).then(response => {
+            var name = document.getElementById("updateNameDisplay");
+            if (response.ok) {
+                name.innerHTML = '更新成功';
+            } else {
+                name.innerHTML = '更新失敗';
+            }
+
+        });
  
- };
+    };
 
 
 
